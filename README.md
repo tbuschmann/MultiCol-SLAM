@@ -156,6 +156,10 @@ The original versions can be found here: [DBoW2](https://github.com/dorian3d/DBo
 
 # 6. Build MultiCol-SLAM:
 
+## Docker:
+Extract example files 
+
+
 ## Ubuntu:
 
 This is tested with Ubuntu 16.04.
@@ -254,5 +258,7 @@ In our example, we could run MultiCol-SLAM:
 
     ./Examples/Lafida/multi_col_slam_lafida ./Examples/small_orb_omni_voc_9_6.yml  ./Examples/Lafida/Slam_Settings_indoor1.yaml ./Examples/Lafida/ $HOME$/Downloads/IndoorDynamic
 
-
+# 8. Run examples with Docker
+    -build the Image with ./build_docker.sh 
+    -run the example dataset with ./run_examples.sh
 
