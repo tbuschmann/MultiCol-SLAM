@@ -1,2 +1,5 @@
 Dockerfile
 README.md
+dataset/
+indoor_dynamic/
+knepper/

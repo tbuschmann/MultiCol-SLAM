@@ -29,9 +29,20 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=OFF .. && \
 make -j 4 && \
 make install
 
-# Build MultiCol-SLAM
-COPY . source/multicol-slam
-WORKDIR source/multicol-slam
-RUN chmod +x build.sh && sh build.sh
+# Build MultiCol-SLAM (base)
+COPY ThirdParty /source/multicol-slam/ThirdParty
+COPY include /source/multicol-slam/include
+COPY build_base.sh /source/multicol-slam/
+WORKDIR /source/multicol-slam
+RUN chmod +x build_base.sh && sh build_base.sh
+
+#split for faster build on changes
+COPY src /source/multicol-slam/src
+COPY CMakeLists.txt /source/multicol-slam
+COPY build.sh /source/multicol-slam
+COPY Examples /source/multicol-slam/Examples
+#WORKDIR source/multicol-slam
+#Build Examples
+RUN cd /source/multicol-slam && chmod +x build.sh && sh build.sh
 
 # clean up Image

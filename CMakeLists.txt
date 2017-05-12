@@ -195,6 +195,6 @@ ENDIF()
 
 # Build examples
 MESSAGE("${PROJECT_NAME}")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Lafida)
-add_executable(multi_col_slam_lafida Examples/Lafida/mult_col_slam_lafida.cpp)
-target_link_libraries(multi_col_slam_lafida ${PROJECT_NAME})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Knepper)
+add_executable(multi_col_slam_knepper Examples/Knepper/mult_col_slam_knepper.cpp)
+target_link_libraries(multi_col_slam_knepper ${PROJECT_NAME})
